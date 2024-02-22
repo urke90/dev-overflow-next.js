@@ -23,10 +23,10 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
   const handleChangeTheme = () => {
     if (mode === "dark") {
-      setMode("light");
+      // setMode("light");
       document.documentElement.classList.add("light");
     } else {
-      setMode("dark");
+      // setMode("dark");
       document.documentElement.classList.add("dark");
     }
   };
