@@ -1,4 +1,4 @@
-import { UserButton } from "@clerk/nextjs";
+import { UserButton } from '@clerk/nextjs';
 
 // ----------------------------------------------------------------
 type HomeProps = {};

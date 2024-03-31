@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from 'react';
 
 // ----------------------------------------------------------------
 
@@ -14,24 +14,24 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>({
-  mode: "",
+  mode: '',
   setMode: () => {},
 });
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState('');
 
   const handleChangeTheme = () => {
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      setMode("dark");
-      document.documentElement.classList.add("dark");
+      setMode('dark');
+      document.documentElement.classList.add('dark');
     } else {
-      setMode("light");
-      document.documentElement.classList.remove("dark");
+      setMode('light');
+      document.documentElement.classList.remove('dark');
     }
   };
 
@@ -50,7 +50,7 @@ export const useTheme = () => {
   const context = useContext(ThemeContext);
 
   if (context === undefined) {
-    throw new Error("useTheme must be used within");
+    throw new Error('useTheme must be used within');
   }
 
   return context;
